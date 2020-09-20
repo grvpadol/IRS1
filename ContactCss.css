@@ -1,0 +1,175 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../Image/head.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+.clearfix:after
+{content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0px;
+    clear: both;
+}
+.row
+{
+    max-width: 1180px;
+    margin: 0 auto;
+    
+}
+.logo
+{
+    height: 120px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+body
+{
+    font-size: 20px; 
+    overflow-x:hidden;
+    color: whitesmoke;
+     font-family: 'Bangers', cursive;
+}
+
+.Main-nav
+{
+    float: right;
+    margin-top:60px; 
+}
+.Main-nav li
+{
+    display: inline-block;
+    list-style: none;
+    margin-left: 40px;
+}
+.Main-nav li a
+{padding: 5px 0;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 100;
+}
+.Main-nav li a:hover
+{
+  border-bottom: 2px solid moccasin;
+}
+.main-content
+{   width: 1180px;
+    position: absolute; 
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    float: left;
+    
+}
+h1
+{ color: #fff;
+    font-size: 200%;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase; 
+    font-weight: lighter;
+}
+h2
+    { color: #fff;
+      margin-left: 70%;
+     margin-top: 1%;
+     font-size: 100%;
+    word-spacing: 6px;
+    letter-spacing: 3px;
+    text-transform: uppercase; 
+    font-weight: lighter;
+}
+.btn
+{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: lighter;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+.btn-full
+{
+    background-color: transparent;
+    color:gold;
+    
+    margin-right:  15px;
+    border: 1px solid azure;
+}
+.btn-full:hover
+{
+    background-color: white;
+}
+.btn-1
+{background-color: transparent;
+    color: white;
+    margin-right:  15px;
+    border: 1px solid white;
+    
+}
+.colorchange
+{
+    animation: colorchangeInternational  4s infinite;
+}
+@keyframes colorchangeInternational
+{
+    0%{color:red;}
+    25%{color:gold;}
+    50%{color:orange;}
+    75%{color:grey;}
+    100%{color: yellow;}
+}
+.Bt
+{
+    animation: colorchangebtn   4s infinite;
+}
+@keyframes colorchangebtn
+{
+    0%{color:red;}
+    25%{color:gold;}
+    50%{color:orange;}
+    75%{color:grey;}
+    100%{color: yellow;}
+}
+.Mobile-icon{display: none;}
+@media only screen and (max-width: 1180px)
+{   .main-content{
+        width: 100%;
+        padding: 0 2%;
+    }
+ }  
+ @media only screen and (max-width: 998px){
+    h1{font-size: 200%;}
+ }
+ @media only screen and (max-width: 768px){
+     h1{font-size: 180%;}
+    .Main-nav{display: none;}
+    .Mobile-icon{display: inline-block;
+     color: #fff;
+     float: right;
+     margin-top: 30px;
+     margin-right: 20px;
+     }
+     .Main-nav{float: left;}
+     .Main-nav li{
+     
+     display: block;
+     margin-top: 10px;
+ }
+ 
+ }
+ 
+ 
