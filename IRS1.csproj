@@ -107,6 +107,7 @@
     <Content Include="image\head.jpg" />
     <Content Include="image\logo.png" />
     <Content Include="menu.aspx" />
+    <Content Include="Menu1.aspx" />
     <Content Include="order.aspx" />
     <Content Include="Reservation.aspx" />
     <Content Include="Signin.aspx" />
@@ -130,6 +131,13 @@
     </Compile>
     <Compile Include="DriveThrough.aspx.designer.cs">
       <DependentUpon>DriveThrough.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu1.aspx.cs">
+      <DependentUpon>Menu1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu1.aspx.designer.cs">
+      <DependentUpon>Menu1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Signin.aspx.cs">
