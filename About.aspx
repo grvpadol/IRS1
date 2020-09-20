@@ -24,7 +24,7 @@
                 <a>About Us</a>
               </li>
               <li>
-                <a href="menu.aspx">menu</a>
+                <a href="Menu1.aspx">menu</a>
               </li>
               <li>
                 <%--<a href="Reservation.aspx">Reservation</a>--%>
