@@ -19,7 +19,7 @@
                     <ul class="Main-nav animated slideInDown" id="checkone">
                         <li><a>Home</a></li>
                         <li><a href="About.aspx">about us</a></li>
-                        <li><a href="menu.aspx">menu</a></li>
+                        <li><a href="menu.aspx">Menu1</a></li>
                        <%-- <li><a href="Reservation.aspx">Reservation</a></li>--%>
                          <li><a href="Signin.aspx">Reservation</a></li>
                          <li><a href="Staff.aspx">staff</a></li>
