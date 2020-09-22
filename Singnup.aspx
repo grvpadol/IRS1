@@ -39,26 +39,17 @@
                 <ul class="list">
                     <li><h2>  Member Information</h2></li>
                         
-                           <li><asp:TextBox ID="FirstName" name="Fiest Name" Placeholder="First Name" runat="server"></asp:TextBox></li>
-                           <li><asp:TextBox ID="LastName" name="Last Name" Placeholder="Last Name" runat="server" OnTextChanged="LastName_TextChanged"></asp:TextBox></li>
-                          <li> <asp:TextBox ID="userName1" input type="text" name ="User Name" Placeholder="User Nmae" runat="server"></asp:TextBox></li>
+                        <li><asp:TextBox ID="FirstName" name="Fiest Name" Placeholder="First Name" runat="server"></asp:TextBox></li>
+                        <li><asp:TextBox ID="LastName" name="Last Name" Placeholder="Last Name" runat="server"></asp:TextBox></li>
+                        <li> <asp:TextBox ID="userName1" input type="text" name ="User Name" Placeholder="User Nmae" runat="server"></asp:TextBox></li>
                         <li><asp:TextBox ID="Password" input type="password" name ="password" placeholder="password" runat="server"></asp:TextBox></li>
                         <li> <asp:TextBox ID="RenterPass" input type="password" name ="Reenter-password" placeholder="RenterPass" runat="server"></asp:TextBox></li>
                         <li><asp:TextBox ID="CellNumber"  name ="Number" placeholder="Cell Number" runat="server"></asp:TextBox></li>
-                         
-<%--                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />--%>
-                            <li><asp:TextBox ID="Address" name="Address" placeholder="Address" runat="server"></asp:TextBox></li>
-                            <li><asp:TextBox ID="City" name="City" placeholder="City" runat="server"></asp:TextBox>
-                               <li> <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Submit"/></li>
-                    </li>
+                        <li><asp:TextBox ID="Address" name="Address" placeholder="Address" runat="server"></asp:TextBox></li>
+                        <li><asp:TextBox ID="City" name="City" placeholder="City" runat="server"></asp:TextBox> </li>
+                        <li> <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Submit"/></li>
                    
-                   
-                       
-
-
-
-
-                </ul>
+                 </ul>
                 </div>
             </form>
             </body>

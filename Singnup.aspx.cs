@@ -8,6 +8,12 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using System.Net;
+using System.Net.Mail;
+using System.Web.Mail;
+using System.Security.Cryptography.X509Certificates;
+using MailMessage = System.Net.Mail.MailMessage;
+
 namespace IRS1
 {
     public partial class Singnup : System.Web.UI.Page
@@ -41,19 +47,50 @@ namespace IRS1
                     {
                         com.Parameters.Add("@LastName", SqlDbType.VarChar, 255).Value = LastName.Text;
                         com.Parameters.Add("@FirstName", SqlDbType.VarChar, 255).Value = FirstName.Text;
-                        com.Parameters.Add("@Userid", SqlDbType.VarChar, 255).Value = userName1.Text;
+                        com.Parameters.Add("@Userid", SqlDbType.VarChar, 320).Value = userName1.Text;
                         com.Parameters.Add("@pass", SqlDbType.VarChar, 255).Value = Password.Text;
                         com.Parameters.Add("@ContactNum", SqlDbType.VarChar, 10).Value = CellNumber.Text;
                         com.Parameters.Add("@Address", SqlDbType.VarChar, 255).Value = Address.Text;
                         com.Parameters.Add("@City", SqlDbType.VarChar, 255).Value = City.Text;
-
+                        Emailer();
                         com.ExecuteNonQuery();
-                        Response.Redirect("Signin.aspx");
-
-
                     }
                 }
             }
+
+        }
+
+
+        public void Emailer()
+        {
+            try
+            {
+                string userto = userName1.Text;
+                MailMessage msg = new MailMessage("internationhotel88@gmail.com", userto);
+                msg.Subject = "Welcome to International Restaurant Family";
+                msg.Body = "Your account was successfully created";
+
+                SmtpClient smt = new SmtpClient();
+                smt.Host = "smtp.gmail.com";
+                smt.EnableSsl = true;
+                System.Net.NetworkCredential ntwd = new NetworkCredential();
+                ntwd.UserName = "internationhotel88@gmail.com";
+                ntwd.Password = "Rajaji@88";
+
+                smt.UseDefaultCredentials = true;
+                smt.Credentials = ntwd;
+                smt.Port = 587;
+
+
+                smt.Send(msg);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            Response.Redirect("Signin.aspx");
+
 
         }
         private bool IsValid()
@@ -69,8 +106,9 @@ namespace IRS1
             exists = (int)cmd.ExecuteScalar() > 0;
             if (exists)
             {
-                MessageBox.Show("Useralready exists");
-                return false;
+                //MessageBox.Show("Useralready exists");
+                //return false;
+                return true;
 
             }
             return true;
