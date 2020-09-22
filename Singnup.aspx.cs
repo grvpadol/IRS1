@@ -106,9 +106,9 @@ namespace IRS1
             exists = (int)cmd.ExecuteScalar() > 0;
             if (exists)
             {
-                //MessageBox.Show("Useralready exists");
-                //return false;
-                return true;
+                MessageBox.Show("Useralready exists");
+                return false;
+
 
             }
             return true;
