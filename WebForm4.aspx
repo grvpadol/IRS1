@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm4.aspx.cs" Inherits="IRS1.WebForm4" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,6 +29,9 @@
                 padding: 0 2%;
                 background-color: transparent;
             }
+            .auto-style13 {
+            margin-left: 3px;
+        }
             </style>
 
 <body>
@@ -39,7 +43,7 @@
                         <li><a href = "Home.aspx">Home</a></li>
                         <li><a href ="about.aspx">about us</a></li>
                         <li><a href="menu.aspx">menu</a></li>
-                        <li><a href="Reservation.aspx">Reservation</a></li>
+                        <li><a href="WebForm4.aspx">Reservation</a></li>
                          <li><a href="Staff.aspx">staff</a></li>
                         <li><a >WebForm3</a></li>
                          <li><a href="Contact.aspx">Contact</a></li>
@@ -54,9 +58,10 @@
        <div class = "auto-style12">
            <table class "auto-style10" border="0">
             <tr>
-                <td class="auto-style2">Customer Name</td>
+                <td class="auto-style2">Register EmailId</td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="TextBox1" runat="server" Height="34px" Width="365px" OnTextChanged="TextBox1TextChanged"></asp:TextBox>
+                    
+                    <asp:TextBox ID="TextBox1" runat="server" Height="40px" Width="363px" readonly="true" OnTextChanged="TextBox1TextChanged" CssClass="auto-style13"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -141,7 +146,7 @@
             <tr>
                 <td class="auto-style6"></td>
                 <td class="auto-style7">
-                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="False">
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="False" Height="59px" Width="216px">
                         <asp:ListItem>Table 1</asp:ListItem>
                         <asp:ListItem>Table 2</asp:ListItem>
                         <asp:ListItem>Table 3</asp:ListItem>

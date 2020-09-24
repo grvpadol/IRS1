@@ -11,9 +11,13 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.ComponentModel;
+using System.Net;
+using System.Net.Mail;
 
 
 using System.Windows;
+using System.Security.Cryptography.X509Certificates;
+
 namespace IRS1
 {
     public partial class Singin : System.Web.UI.Page
@@ -26,7 +30,7 @@ namespace IRS1
 
             using (SqlCommand com = sc.CreateCommand())
             {
-                String uid = TextBox4.Text;
+                String uid = TextBox4.Text.Trim();
                 string pass = TextBox5.Text;
                 string qry = ("Select * from sigup where userid='"+uid+ "'and pass ='" + pass + "'");
                 SqlCommand cmd = new SqlCommand(qry, sc);
@@ -37,8 +41,10 @@ namespace IRS1
                 }
                 if (sdr.Read())
                 {
-                   
-                    Response.Redirect("Reservation.aspx");
+                    Emailer2();
+                    Session["user"] = TextBox4.Text;
+                    Response.Redirect("WebForm4.aspx");
+                    
                 }
                 else 
                 {
@@ -46,10 +52,34 @@ namespace IRS1
                 }
                 
             }
-
-
         }
 
+        public void Emailer2()
+        {
+            try
+            {
+                String uid = TextBox4.Text;
+                MailMessage msgs = new MailMessage("internationhotel88@gmail.com", TextBox4.Text);
+                msgs.Subject = "Welcome to International Restaurant";
+                msgs.Body = "Sig in Successfully Plase Visit agian and again";
+
+                SmtpClient smts = new SmtpClient();
+                smts.Host = "smtp.gmail.com";
+                smts.EnableSsl = true;
+                System.Net.NetworkCredential ntwd = new NetworkCredential();
+                ntwd.UserName = "internationhotel88@gmail.com";
+                ntwd.Password = "Rajaji@88";
+                smts.UseDefaultCredentials = true;
+                smts.Credentials = ntwd;
+                smts.Port = 587;
+                smts.Send(msgs);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
     }
 
     
